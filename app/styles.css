@@ -289,4 +289,8 @@ a > span {
         font-weight: bold;
         color: var(--white);
     }
+
+    #clear-all {
+        display: none !important;
+    }
 }

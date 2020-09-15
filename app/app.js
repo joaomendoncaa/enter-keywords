@@ -1,10 +1,9 @@
-let tagsArray = [],
-    tagsContainer = document.querySelector('.tags-container'),
-    input = document.querySelector('input'),
-    clearBtn = document.querySelector('#clear-all'),
-    alerts = document.querySelector('.alerts'),
-    charLimit = 40
-
+let tagsArray = []
+let tagsContainer = document.querySelector('.tags-container')
+let input = document.querySelector('input')
+let clearBtn = document.querySelector('#clear-all')
+let alerts = document.querySelector('.alerts')
+let charLimit = 40
 
 input.addEventListener('keyup', addTag)
 clearBtn.addEventListener('click', clearAllTags)
@@ -38,10 +37,10 @@ function updateTags() {
        tagsContainer.append(createTag(element)) 
     })
 
-    if (!tagsArray.length < 1) {
-        clearBtn.style.display = "flex"
-    } else {
+    if (tagsArray.length < 1) {
         clearBtn.style.display = "none"
+    } else {
+        clearBtn.style.display = "flex"
     }
 }
 
@@ -84,11 +83,11 @@ function clearAllTags() {
     updateTags()
 }
 
-function popAlert(title, message) {
+function popAlert(title, message) { 
     let blueBG = "rgb(0, 132, 209)",
         yellowBG = "rgb(207, 188, 11)"
 
-    const alertsContainer = alerts;
+    const alertsContainer = alerts 
 
     const alertBox = document.createElement('div')
     alertBox.classList.add('alertbox')
@@ -117,4 +116,6 @@ function popAlert(title, message) {
         }, 100)
     }, 3250);
 }
+
+
 
